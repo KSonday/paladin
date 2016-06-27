@@ -1,0 +1,437 @@
+<div class="no-image-page-wrapper">
+
+	<article id="main" class="form-success">
+		<section class="container special"
+			ng-controller="opportunitySelectController">
+			<h3>Opportunity List</h3>
+			<div class="container">
+				<form id="match-email-form">
+					<!-- 					<div id="match-email-user" class="form-element-height">
+						<select class="form-control" ng-model="matchEmail.user"
+							ng-options="user.email for user in users">
+							<option value="" selected disabled>User</option>
+
+						</select>
+					</div> -->
+					<div>
+						<div class="input-group voffset3" id="opportunity-search">
+							<div>
+								<i class="fa fa-search"></i>
+							</div>
+							<input type="text" class="form-control" placeholder="Search"
+								ng-model="searchTerm">
+						</div>
+					</div>
+				</form>
+				<div class="table-div voffset3">
+					<table id="opportunity-search-table"
+						class="table table-bordered table-striped voffset3">
+						<thead>
+							<tr>
+								<td><a href=""
+									ng-click="sortType = 'title'; sortReverse = !sortReverse">
+										Title <span ng-show="sortType == 'title' && !sortReverse"
+										class="fa fa-caret-down"></span> <span
+										ng-show="sortType == 'title' && sortReverse"
+										class="fa fa-caret-up"></span>
+								</a></td>
+								<td><a href=""
+									ng-click="sortType = 'advocacyAreas'; sortReverse = !sortReverse">
+										Assignee <span
+										ng-show="sortType == 'assignee.email' && !sortReverse"
+										class="fa fa-caret-down"></span> <span
+										ng-show="sortType == 'assignee.email' && sortReverse"
+										class="fa fa-caret-up"></span>
+								</a></td>
+								<td><a href=""
+									ng-click="sortType = 'nonprofit.name'; sortReverse = !sortReverse">
+										Nonprofit <span
+										ng-show="sortType == 'nonprofit.name' && !sortReverse"
+										class="fa fa-caret-down"></span> <span
+										ng-show="sortType == 'nonprofit.name' && sortReverse"
+										class="fa fa-caret-up"></span>
+								</a></td>
+								<td><a href=""
+									ng-click="sortType = 'description'; sortReverse = !sortReverse">
+										Description <span
+										ng-show="sortType == 'description' && !sortReverse"
+										class="fa fa-caret-down"></span> <span
+										ng-show="sortType == 'description' && sortReverse"
+										class="fa fa-caret-up"></span>
+								</a></td>
+								<td><a href=""
+									ng-click="sortType = 'languageSkills'; sortReverse = !sortReverse">
+										Languages <span
+										ng-show="sortType == 'languageSkills' && !sortReverse"
+										class="fa fa-caret-down"></span> <span
+										ng-show="sortType == 'languageSkills' && sortReverse"
+										class="fa fa-caret-up"></span>
+								</a></td>
+								<td><a href=""
+									ng-click="sortType = 'opportunityTypes'; sortReverse = !sortReverse">
+										Opportunity Type <span
+										ng-show="sortType == 'opportunityTypes' && !sortReverse"
+										class="fa fa-caret-down"></span> <span
+										ng-show="sortType == 'opportunityTypes' && sortReverse"
+										class="fa fa-caret-up"></span>
+								</a></td>
+								<td><a href=""
+									ng-click="sortType = 'advocacyAreas'; sortReverse = !sortReverse">
+										Advocacy Area <span
+										ng-show="sortType == 'advocacyAreas' && !sortReverse"
+										class="fa fa-caret-down"></span> <span
+										ng-show="sortType == 'advocacyAreas' && sortReverse"
+										class="fa fa-caret-up"></span>
+								</a></td>
+								<td>Select</td>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr
+								ng-repeat="opp in opportunities | orderBy:sortType:sortReverse | filter:searchTerm">
+								<td>{{ opp.title }}</td>
+								<td>{{ opp.assignee.email }}</td>
+								<td>{{ opp.nonprofit.name }}</td>
+								<td>{{ opp.description }}</td>
+								<td><p ng-repeat="language in opp.languageSkills">{{
+										language.name }}</p></td>
+								<td><p ng-repeat="type in opp.opportunityTypes">{{
+										type.name }}</p></td>
+								<td><p ng-repeat="area in opp.advocacyAreas">{{
+										area.name }}</p></td>
+								<td><input type='checkbox'
+									data-ng-change='setSelectedItem(opp)'
+									ng-model='selectedItems[opp.id]'></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- 			<div class="form-submit">
+				<button ng-click="sendMatchEmail()" class="button special">Send
+					Match Email</button>
+			</div> -->
+			<div id="opportunity-select voffset4" class="form-element-height">
+				<h3>Pair User with Opportunity</h3>
+				<form id="signup-form" ng-submit="pairUserAndOpportunity()">
+					<select class="form-control voffset2" ng-model="opportunitySelect.user"
+						ng-options="user.email for user in users">
+						<option value="" selected disabled>User</option>
+					</select> <select class="form-control voffset2"
+						ng-model="opportunitySelect.opportunity"
+						ng-options="opportunity.title for opportunity in opportunities">
+						<option value="" selected disabled>Opportunity</option>
+					</select>
+					<div class="form-submit voffset2">
+						<button type="submit" class="button special">Pair
+							User/Opportunity</button>
+					</div>
+				</form>
+			</div>
+			<div class="container table-div">
+				<h3>Nonprofit List</h3>
+				<table id="nonprofit-table"
+					class="table table-bordered table-striped voffset3">
+					<thead>
+						<tr>
+							<td>Name</td>
+						</tr>
+					</thead>
+					<tbody class="table-body">
+						<tr ng-repeat="nonprofit in nonprofits">
+							<td>{{ nonprofit.name }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="container table-div">
+				<h3>Enterprise List</h3>
+				<table id="enterprise-table"
+					class="table table-bordered table-striped voffset3">
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>URL Key</td>
+						</tr>
+					</thead>
+					<tbody class="table-body">
+						<tr ng-repeat="enterprise in enterprises">
+							<td>{{ enterprise.displayName }}</td>
+							<td>{{ enterprise.name }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<section class="container special signup-wrapper">
+			<h3>Opportunity Submit</h3>
+			<form id="signup-form" ng-submit="submitOpportunity()">
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="formData.nonprofit"
+						ng-options="item.name for item in nonprofits">
+						<option value="" selected disabled>Nonprofit</option>
+
+					</select>
+				</div>
+
+				<div class="form-group form-element-height">
+					<input type="text" class="form-control text-input"
+						placeholder='Title' ng-model="formData.title">
+				</div>
+
+				<div class="form-group">
+					<textarea class="form-control" rows="5"
+						ng-model="formData.description" placeholder="Description"></textarea>
+				</div>
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="formData.timeCommitment">
+						<option value="" selected disabled>Time Commitment</option>
+						<option class="whitefont">A few hours per month</option>
+						<option class="whitefont">A few hours per week</option>
+						<option class="whitefont">A few days per week</option>
+					</select>
+				</div>
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="formData.commitmentDuration">
+						<option value="" selected disabled>Duration</option>
+						<option class="whitefont">Short term</option>
+						<option class="whitefont">Long term</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<dropdown-multiselect dropdown-title="Opportunity Type"
+						ng-model="formData" options="opportunityOptions"
+						key='opportunityTypes'> </dropdown-multiselect>
+				</div>
+				<div class="form-group form-element-height">
+					<dropdown-multiselect dropdown-title="Area of advocacy"
+						ng-model="formData" options="advocacyOptions" key='advocacyAreas'>
+					</dropdown-multiselect>
+				</div>
+				<div class="form-group">
+					<dropdown-multiselect dropdown-title="Languages"
+						ng-model="formData" options="languageOptions" key='languageSkills'>
+					</dropdown-multiselect>
+				</div>
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="formData.training">
+						<option value="" selected disabled>Training?</option>
+						<option class="whitefont">Voluntary</option>
+						<option class="whitefont">Mandatory</option>
+						<option class="whitefont">None</option>
+					</select>
+				</div>
+
+				<div class="form-group form-element-height"
+					ng-if="formData.training && formData.training != 'None'">
+					<select class="form-control" ng-model="formData.trainingDuration">
+						<option value="" selected disabled>Training Duration</option>
+						<option class="whitefont">&lt;2 hours</option>
+						<option class="whitefont">2-5 hours</option>
+						<option class="whitefont">&gt;5 hours</option>
+					</select>
+				</div>
+
+				<div class="form-group form-element-height"
+					ng-if="formData.training && formData.training != 'None'">
+					<select class="form-control" ng-model="formData.cleCredit">
+						<option value="" selected disabled>CLE Credit Offered?</option>
+						<option class="whitefont" value="true">Yes</option>
+						<option class="whitefont" value="false">No</option>
+					</select>
+				</div>
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="formData.experienceLevel">
+						<option value="" selected disabled>Experience</option>
+						<option class="whitefont">Law Student</option>
+						<option class="whitefont">&lt;2 Years</option>
+						<option class="whitefont">2-5 Years</option>
+						<option class="whitefont">&gt;5 Years</option>
+					</select>
+				</div>
+
+				<div class="form-submit">
+					<button type="submit" class="button special">Add
+						Opportunity</button>
+				</div>
+			</form>
+		</section>
+		<section class="container special signup-wrapper">
+			<h3>Nonprofit Submit</h3>
+			<form id="signup-form" ng-submit="submitNonprofit()">
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Nonprofit' name="name" ng-model="nonprofitData.name">
+				</div>
+
+				<div class="form-group">
+					<textarea class="form-control" rows="5"
+						ng-model="nonprofitData.overview"
+						placeholder="Nonprofit Description"></textarea>
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Homepage URL' ng-model="nonprofitData.homepageUrl">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Contact Name' ng-model="nonprofitData.contactName">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Contact Email' ng-model="nonprofitData.contactEmail">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Phone Number' name="name"
+						ng-model="nonprofitData.phoneNumber">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Jurisdiction'
+						ng-model="nonprofitData.primaryJurisdiction">
+				</div>
+
+				<div class="form-group">
+					<dropdown-multiselect dropdown-title="Opportunity Type"
+						ng-model="nonprofitData" options="opportunityOptions"
+						key='opportunityTypes'> </dropdown-multiselect>
+				</div>
+
+				<div class="form-group">
+					<dropdown-multiselect dropdown-title="Area of advocacy"
+						ng-model="nonprofitData" options="advocacyOptions"
+						key='advocacyAreas'> </dropdown-multiselect>
+				</div>
+
+				<div class="form-group">
+					<dropdown-multiselect dropdown-title="Languages"
+						ng-model="nonprofitData" options="languageOptions"
+						key='languageSkills'> </dropdown-multiselect>
+				</div>
+
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="nonprofitData.insurance">
+						<option value="" selected disabled>Malpractice Insurance?</option>
+						<option class="whitefont" value="true">Yes</option>
+						<option class="whitefont" value="false">No</option>
+					</select>
+				</div>
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="nonprofitData.supervision">
+						<option value="" selected disabled>Need Supervision?</option>
+						<option class="whitefont" value="true">Yes</option>
+						<option class="whitefont" value="false">No</option>
+					</select>
+				</div>
+
+				<div class="form-group form-element-height"
+					ng-if="nonprofitData.supervision == 'true'">
+					<select class="form-control"
+						ng-model="nonprofitData.supervisionType">
+						<option value="" selected disabled>Supervision Type</option>
+						<option class="whitefont">Staff attorney available to
+							supervise</option>
+						<option class="whitefont">Staff attorney to co-counsel</option>
+					</select>
+				</div>
+				<div class="form-submit">
+					<button type="submit" class="button special">Add Nonprofit</button>
+				</div>
+				<div class="error-msg">
+					<p ng-show="success">Nonprofit successfully added!</p>
+				</div>
+			</form>
+		</section>
+
+		<section class="container special signup-wrapper">
+			<h3>Enterprise Submit</h3>
+			<form id="signup-form" ng-submit="submitEnterprise()">
+
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Enterprise Name' name="name"
+						ng-model="enterpriseData.displayName">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Enterprise URL Key (lower case; no spaces. i.e: paladin)'
+						name="name" ng-model="enterpriseData.name">
+				</div>
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="enterpriseData.formType">
+						<option value="" selected disabled>Form type</option>
+						<option class="whitefont" value="students">Law Students</option>
+						<option class="whitefont" value="lawyers">Lawyers</option>
+					</select>
+				</div>
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="enterpriseData.orgType">
+						<option value="" selected disabled>Organization type</option>
+						<option class="whitefont" value="school">Law School</option>
+						<option class="whitefont" value="firm">Law Firm</option>
+						<option class="whitefont" value="corporation">Corporation</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Contact Name' ng-model="enterpriseData.contactName">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Contact Email' ng-model="enterpriseData.contactEmail">
+				</div>
+
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Phone Number' name="name"
+						ng-model="enterpriseData.phoneNumber">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control text-input"
+						placeholder='Number of Lawyers' name="name"
+						ng-model="enterpriseData.numLawyers">
+				</div>
+
+				<div class="form-group form-element-height">
+					<select class="form-control" ng-model="enterpriseData.hasProgram">
+						<option value="" selected disabled>Existing Pro bono
+							program?</option>
+						<option class="whitefont" value="true">Yes</option>
+						<option class="whitefont" value="false">No</option>
+					</select>
+				</div>
+
+				<div class="form-group" ng-if="enterpriseData.hasProgram == 'true'">
+					<label class="pull-left">Pro bono program explanation</label>
+					<textarea class="form-control" rows="5"
+						ng-model="enterpriseData.programExp"></textarea>
+				</div>
+
+				<div class="form-submit">
+					<button type="submit" class="button special">Add
+						Enterprise</button>
+				</div>
+			</form>
+		</section>
+	</article>
+</div>

@@ -1,0 +1,108 @@
+<div class="form-group form-element-height">
+	<input type="text" class="form-control text-input" placeholder='Title'
+		name="name" ng-model="user.title">
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="user.userProfile.experienceLevel">
+		<option value="" selected disabled>Experience</option>
+		<option class="whitefont">&lt;2 Years</option>
+		<option class="whitefont">2-5 Years</option>
+		<option class="whitefont">&gt;5 Years</option>
+	</select>
+</div>
+
+<div class="form-group form-element-height">
+	<input type="text" class="form-control text-input"
+		placeholder='Primary Jurisdiction' name="email"
+		ng-model="user.userProfile.primaryJurisdiction">
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="user.userProfile.timeCommitment">
+		<option value="" selected disabled>Time Commitment</option>
+		<option class="whitefont">A few hours per month</option>
+		<option class="whitefont">A few hours per week</option>
+		<option class="whitefont">A few days per week</option>
+	</select>
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="user.userProfile.commitmentDuration">
+		<option value="" selected disabled>Duration</option>
+		<option class="whitefont">Short term</option>
+		<option class="whitefont">Long term</option>
+	</select>
+</div>
+
+<div class="form-group">
+	<dropdown-multiselect dropdown-title="Opportunity Type"
+		ng-model="user.userProfile" options="opportunityOptions"
+		key='opportunityTypes'> </dropdown-multiselect>
+</div>
+
+<div class="form-group form-element-height">
+	<dropdown-multiselect dropdown-title="Area of advocacy"
+		ng-model="user.userProfile" options="advocacyOptions"
+		key='advocacyAreas'> </dropdown-multiselect>
+</div>
+
+<div class="form-group">
+	<dropdown-multiselect dropdown-title="Languages"
+		ng-model="user.userProfile" options="languageOptions"
+		key='languageSkills'> </dropdown-multiselect>
+</div>
+
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="user.userProfile.hasInsurance">
+		<option value="" selected disabled>Need Malpractice
+			Insurance?</option>
+		<option class="whitefont" value="true">Yes</option>
+		<option class="whitefont" value="false">No</option>
+	</select>
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="user.userProfile.supervision">
+		<option value="" selected disabled>Need Supervision?</option>
+		<option class="whitefont" value="true">Yes</option>
+		<option class="whitefont" value="false">No</option>
+	</select>
+</div>
+
+<div class="form-group form-element-height"
+	ng-if="user.userProfile.supervision == 'true'">
+	<select class="form-control"
+		ng-model="user.userProfile.supervisionType">
+		<option value="" selected disabled>Supervision Type</option>
+		<option class="whitefont">Staff attorney available to
+			supervise</option>
+		<option class="whitefont">Staff attorney to co-counsel</option>
+	</select>
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="user.userProfile.previousExperience">
+		<option value="" selected disabled>Prior Pro-bono Experience?</option>
+		<option class="whitefont" value="true">Yes</option>
+		<option class="whitefont" value="false">No</option>
+	</select>
+</div>
+
+<div class="form-group"
+	ng-if="user.userProfile.previousExperience == 'true'">
+	<textarea class="form-control" rows="5"
+		ng-model="user.userProfile.experience" id="explainExperience"
+		placeholder="Please Describe"></textarea>
+</div>
+
+<div class="form-submit">
+	<button type="submit" class="button special">Finished!</button>
+</div>

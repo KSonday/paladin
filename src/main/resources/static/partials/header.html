@@ -1,0 +1,29 @@
+<div id="header" class="alt" ng-controller="headernav">
+	<div id="logoWrapper" class="pull-left">
+		<a ui-sref="home"><img id="logo"
+			src="resources/images/circularlogo.png"></a>
+	</div>
+	<nav class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header" ng-class="{'navy' : expanded}">
+				<button type="button" ng-click="toggleHeader()"
+					class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar"
+				ng-class="{'navy' : expanded}">
+				<ul class="nav navbar-nav">
+					<li><a ui-sref="home">Welcome</a></li>
+					<li><a ui-sref="lawyers">Lawyers</a></li>
+					<li><a ui-sref="enterprises">Enterprises</a></li>
+					<li><a ui-sref="nonprofits">Nonprofits</a></li>
+					<li><a ui-sref="schools">Law Schools</a></li>
+					<li><a ui-sref="signup.userBase">Sign Up</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</div>

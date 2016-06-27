@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:#31374A;}
+	.st1{fill:#FFFFFF;stroke:#E6E7E8;stroke-width:1.4817;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#04948B;}
+	.st3{fill:#660C51;}
+	.st4{fill:#C3956C;}
+	.st5{fill:#31374A;}
+	.st6{fill:#FFFFFF;}
+	.st7{font-family:'LarishNeueSemibold-Regular';}
+	.st8{font-size:4.488px;}
+	.st9{fill:none;stroke:#C3956C;stroke-miterlimit:10;}
+	.st10{opacity:0.7;fill:#AFE6F6;enable-background:new    ;}
+	.st11{opacity:0.9;fill:#D84C4C;enable-background:new    ;}
+	.st12{fill:#04948B;stroke:#04948B;stroke-width:0.6727;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#04948B;stroke-width:0.6727;stroke-miterlimit:10;}
+	.st14{fill:#660C51;stroke:#660C51;stroke-width:0.1406;stroke-miterlimit:10;}
+</style>
+<font horiz-adv-x="1000">
+<!-- Copyright (c) 2007 by Radim Pesko. All rights reserved. -->
+<!-- Copyright: Copyright 2016 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="LarishNeueSemibold-Regular" units-per-em="1000" underline-position="-100" underline-thickness="50"/>
+<missing-glyph horiz-adv-x="310"/>
+<glyph unicode="P" horiz-adv-x="679" d="M356,682C420,682 481,621 488,547C491,516 491,488 488,456C481,385 417,330 346,330l-75,0l0,318C271,660 292,682 304,682M273,277l72,0C502,277 649,351 649,508C649,664 509,728 358,728l-318,0l0,-37l16,0C69,691 111,647 111,632l0,-536C111,80 70,37 58,37l-15,0l0,-37l334,0l0,37l-50,0C313,37 273,81 273,96z"/>
+</font>
+
+	<rect y="-0.1" class="st0" width="60" height="60"/>
+<g>
+	<polygon class="st1" points="54.5,30.2 37.9,30.2 32.4,36.6 32.4,30.2 22.7,30.2 22.7,4.8 54.5,4.8 	"/>
+</g>
+<rect x="26.2" y="20.5" class="st2" width="18" height="1"/>
+<rect x="26.2" y="26" class="st3" width="18" height="1"/>
+<path class="st4" d="M46.3,15.9c0-0.4,0.1-1.5,1.3-2c-0.3-0.3-0.6-0.7-0.6-1.2c0-0.9,0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6
+	c0,0.5-0.2,0.9-0.6,1.2c1.2,0.4,1.3,1.6,1.3,2v0.3h-4.7v-0.3H46.3z"/>
+<g>
+	<ellipse class="st5" cx="28.8" cy="9.8" rx="3.5" ry="3.4"/>
+	<text transform="matrix(1 0 0 1 27.2715 11.6206)" class="st6 st7 st8">P</text>
+</g>
+<g>
+	<rect x="15.7" y="33.5" class="st6" width="14.3" height="22.1"/>
+	<g>
+		<path class="st9" d="M30.2,54c0,1.1-0.9,2-2,2h-11c-1.1,0-2-0.9-2-2V35c0-1.1,0.9-2,2-2h11c1.1,0,2,0.9,2,2V54z"/>
+		<line class="st9" x1="30.2" y1="37" x2="15.2" y2="37"/>
+		<line class="st9" x1="30.2" y1="52" x2="15.2" y2="52"/>
+		<line class="st9" x1="20.2" y1="35" x2="25.2" y2="35"/>
+		<circle class="st9" cx="22.7" cy="54" r="0.5"/>
+	</g>
+</g>
+<g>
+	<path class="st10" d="M26.3,44.9h-7.1c-0.4,0-0.7,0.3-0.7,0.7v4.3c0,0.4,0.3,0.7,0.7,0.7h7.1c0.4,0,0.7-0.3,0.7-0.7v-4.3
+		C27,45.3,26.6,44.9,26.3,44.9z M21,48.5l-1.3,0.9h-0.1c0,0-0.1,0-0.1-0.1s0-0.2,0-0.2l1.3-0.9c0.1,0,0.2,0,0.2,0
+		C21.1,48.3,21.1,48.4,21,48.5z M25.8,49.3l-0.1,0.1h-0.1l-1.3-0.9c-0.1,0-0.1-0.1,0-0.2c0-0.1,0.1-0.1,0.2,0l1.3,0.9
+		C25.8,49.1,25.8,49.2,25.8,49.3z M25.8,46.6l-3,2h-0.1h-0.1l-3-2c-0.1,0-0.1-0.1,0-0.2c0-0.1,0.1-0.1,0.2,0l2.9,1.9l2.9-1.9
+		c0.1,0,0.2,0,0.2,0C25.8,46.5,25.8,46.6,25.8,46.6z"/>
+	<ellipse transform="matrix(0.7147 -0.6995 0.6995 0.7147 -23.5408 31.4449)" class="st11" cx="26.8" cy="44.6" rx="1.8" ry="1.8"/>
+</g>
+<rect x="26.2" y="15.2" class="st4" width="18" height="1"/>
+<g>
+	<polygon class="st12" points="50,19.4 49.2,18.2 49.6,18.2 48.8,17 48,18.2 48.4,18.2 47.6,19.4 48.2,19.4 47.3,20.6 50.3,20.6 
+		49.4,19.4 	"/>
+	<line class="st13" x1="48.8" y1="20.6" x2="48.8" y2="21.5"/>
+</g>
+<g>
+	<path class="st14" d="M47.7,24.2c0,0.4-0.2,0.7-0.5,0.7s-0.5-0.3-0.6-0.7c0-0.4,0.2-0.7,0.5-0.7S47.7,23.8,47.7,24.2 M49.7,22.5
+		c-0.3-0.1-0.6,0.2-0.7,0.6c-0.1,0.4,0.1,0.7,0.3,0.8c0.3,0.1,0.6-0.2,0.7-0.6C50.2,22.8,49.8,22.5,49.7,22.5 M50.4,23.8
+		c-0.3,0-0.5,0.3-0.5,0.7c0,0.4,0.3,0.6,0.5,0.6c0.3,0,0.5-0.2,0.5-0.6C50.9,23.9,50.5,23.8,50.4,23.8 M48.2,22.4
+		c-0.3,0-0.5,0.3-0.5,0.7c0,0.4,0.2,0.7,0.5,0.7s0.5-0.3,0.5-0.7C48.7,22.7,48.5,22.4,48.2,22.4 M48.2,24.6c-0.6,0.8-1.2,1-1.2,1.6
+		c0,0.3,0.2,0.8,0.7,0.8s0.7-0.1,1.1-0.1s0.7,0.2,1.1,0.2s0.7-0.5,0.7-0.8c0-0.6-0.7-0.6-1.3-1.7c-0.2-0.2-0.4-0.3-0.6-0.3
+		S48.3,24.4,48.2,24.6"/>
+</g>
+</svg>

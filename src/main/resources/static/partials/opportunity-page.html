@@ -1,0 +1,111 @@
+<div class="no-image-page-wrapper">
+	<article id="main" ng-show="!success">
+		<div id="opportunity-page" ng-show="opportunity">
+			<div class="row opportunity-section">
+				<div class="col-md-4 text-center" id="opportunity-icon">
+					<div>
+						<img src="resources/images/circularlogo.png" alt="" />
+					</div>
+				</div>
+				<div class="col-md-8" id="opportunity-header">
+					<div>
+						<h3 ng-bind="opportunity.title"></h3>
+						<h5 ng-bind="opportunity.nonprofit.name"></h5>
+						<ul>
+							<li><strong>LOCATION:</strong> <span
+								ng-bind="opportunity.nonprofit.primaryJurisdiction"></span></li>
+							<li><strong>TIME:</strong> <span ng-bind="opportunity.timeCommitment"></span>,
+								<span ng-bind="opportunity.commitmentDuration"></span></li>
+							<li><strong>AREA:</strong> <span
+								ng-repeat="area in opportunity.advocacyAreas">{{
+									area.name }}{{$last ? '' : ', '}}</span></li>
+							<li><strong>SKILLS:</strong> <span
+								ng-repeat="oppType in opportunity.opportunityTypes">{{
+									oppType.name }}{{$last ? '' : ', '}}</span></li>
+						</ul>
+						<button ng-click="selectOpportunity()" class="button small">Get
+							Started</button>
+					</div>
+				</div>
+				<div class="opportunity-section-border"></div>
+			</div>
+			<div class="row opportunity-section">
+				<div class="col-md-8 opportunity-left">
+					<h4>Description</h4>
+					<p ng-bind="opportunity.description"></p>
+				</div>
+				<div class="col-md-4 opportunity-right">
+					<h4>Details</h4>
+					<ul>
+						<li><span><strong>Experience Level:</strong></span> <span
+							ng-bind="opportunity.experienceLevel"></span></li>
+						<li><span><strong>Training:</strong></span> <span ng-bind="opportunity.training"></span><span
+							ng-show="opportunity.trainingDuration">, </span><span
+							ng-bind="opportunity.trainingDuration"></span></li>
+						<li><span><strong>Malpractice Ins.:</strong></span> <span
+							ng-show="opportunity.nonprofit.insurance">Yes</span><span
+							ng-show="!opportunity.nonprofit.insurance">No</span></li>
+						<li><span><strong>Supervision:</strong></span> <span
+							ng-show="!opportunity.nonprofit.supervision">Not available</span><span
+							ng-show="opportunity.nonprofit.supervision"> Yes</span><span
+							ng-show="opportunity.nonprofit.supervisionType">, </span><span
+							ng-bind="opportunity.nonprofit.supervisionType"></span></li>
+					</ul>
+				</div>
+				<div class="opportunity-section-border"></div>
+			</div>
+			<div class="row opportunity-section">
+				<div class="col-md-12 opportunity-left">
+					<h4>About the Organization</h4>
+					<p ng-bind="opportunity.nonprofit.overview"></p>
+				</div>
+				<div class="opportunity-section-border"></div>
+			</div>
+			<div class="row opportunity-section">
+				<div class="col-md-8 opportunity-left">
+					<h4>How it works</h4>
+					<div class="row">
+						<div class="col-md-4 how-it-works">
+							<div class="test">
+								<div class="number-circle green">1</div>
+							</div>
+							<p class="number-circle-text">Click “Get Started” to let us
+								know that you’d like to take on this opportunity</p>
+						</div>
+						<div class="col-md-4 how-it-works">
+							<div class="test">
+								<div class="number-circle bronze">2</div>
+							</div>
+							<p class="number-circle-text">We’ll connect you and your
+								employer with the nonprofit to coordinate, clear conflicts and
+								complete any training or intake.</p>
+						</div>
+						<div class="col-md-4 how-it-works">
+							<div class="test">
+								<div class="number-circle burgundy">3</div>
+							</div>
+							<p class="number-circle-text">We’ll check in when you begin
+								working on a case to track your impact!</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 opportunity-right">
+					<h4>Questions?</h4>
+					<p>
+						Contact us at: <a href="mailto:team@joinpaladin.com">team@joinpaladin.com</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div ng-show="!opportunity" class="voffset5 invalid-request">
+			<h2>Oops!</h2>
+			<p>This link is not valid to complete your request.</p>
+		</div>
+	</article>
+	<article id="main" class="form-success" ng-show="success">
+		<header id="form-header" class="special container">
+			<h2>Congratulations!</h2>
+			<p>You will be contacted in a few days with further steps.</p>
+		</header>
+	</article>
+</div>

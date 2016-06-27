@@ -1,0 +1,95 @@
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Nonprofit' name="name"
+		ng-model="formData.organization.name">
+</div>
+
+<div class="form-group">
+	<textarea class="form-control" rows="5"
+		ng-model="formData.organization.overview"
+		placeholder="Nonprofit Description"></textarea>
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Homepage URL'
+		ng-model="formData.organization.homepageUrl">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Contact Name'
+		ng-model="formData.organization.contactName">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Contact Email'
+		ng-model="formData.organization.contactEmail">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Phone Number' name="name"
+		ng-model="formData.organization.phoneNumber">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Jurisdiction'
+		ng-model="formData.organization.primaryJurisdiction">
+</div>
+
+<div class="form-group">
+	<dropdown-multiselect dropdown-title="Opportunity Type"
+		ng-model="formData.organization" options="opportunityOptions"
+		key='opportunityTypes'> </dropdown-multiselect>
+</div>
+
+<div class="form-group">
+	<dropdown-multiselect dropdown-title="Area of advocacy"
+		ng-model="formData.organization" options="advocacyOptions"
+		key='advocacyAreas'> </dropdown-multiselect>
+</div>
+
+<div class="form-group">
+	<dropdown-multiselect dropdown-title="Languages"
+		ng-model="formData.organization" options="languageOptions"
+		key='languageSkills'> </dropdown-multiselect>
+</div>
+
+
+<div class="form-group form-element-height">
+	<select class="form-control" ng-model="formData.organization.insurance">
+		<option value="" selected disabled>Malpractice Insurance?</option>
+		<option class="whitefont" value="true">Yes</option>
+		<option class="whitefont" value="false">No</option>
+	</select>
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="formData.organization.supervision">
+		<option value="" selected disabled>Need Supervision?</option>
+		<option class="whitefont" value="true">Yes</option>
+		<option class="whitefont" value="false">No</option>
+	</select>
+</div>
+
+<div class="form-group form-element-height"
+	ng-if="formData.organization.supervision == 'true'">
+	<select class="form-control"
+		ng-model="formData.organization.supervisionType">
+		<option value="" selected disabled>Supervision Type</option>
+		<option class="whitefont">Staff attorney available to
+			supervise</option>
+		<option class="whitefont">Staff attorney to co-counsel</option>
+	</select>
+</div>
+
+
+<div class="form-submit">
+	<div id="form-submit">
+		<a ng-click="processForm()" class="button special"> Finished! </a>
+	</div>
+</div>

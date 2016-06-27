@@ -1,0 +1,36 @@
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='School Name' name="name"
+		ng-model="formData.organization.name">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input" placeholder='Phone Number'
+		name="name" ng-model="formData.organization.phoneNumber">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input" placeholder='Number of Law Students'
+		name="name" ng-model="formData.organization.numLawyers">
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control" ng-model="formData.organization.hasProgram">
+		<option value="" selected disabled>Looking to involve more students in pro bono work?</option>
+		<option class="whitefont" value="true">Yes</option>
+		<option class="whitefont" value="false">No</option>
+	</select>
+</div>
+
+<div class="form-group" ng-if="formData.organization.hasProgram == 'true'">
+	<label class="pull-left">Please tell us about it:</label>
+	<textarea class="form-control" rows="5"
+		ng-model="formData.organization.programExp"></textarea>
+</div>
+
+<div class="form-submit">
+	<div id="form-submit">
+		<a ng-click="processForm()" class="button special"> Finished!
+		</a>
+	</div>
+</div>

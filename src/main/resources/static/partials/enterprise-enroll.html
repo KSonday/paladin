@@ -1,0 +1,23 @@
+<div class="no-image-page-wrapper">
+	<article id="main" ng-show="success">
+		<header id="form-header" class="special container">
+			<h2>Welcome to Paladin, <span ng-bind="user.organization.displayName"></span>!</h2>
+			<p>Tell us a bit about yourself to start your impact.</p>
+		</header>
+		<section class="container special signup-wrapper">
+
+			<form id="signup-form" ng-submit="processForm()">
+				<!-- nested state views will be injected here -->
+				<div id="form-views" ui-view></div>
+			</form>
+		</section>
+	</article>
+	<article id="main" ng-show="!success">
+		<header id="form-header" class="special container">
+			<h2>Uh oh!</h2>
+			<p>This link is not valid.</p>
+		</header>
+		<section class="container special signup-wrapper"
+			style="margin-bottom: 5em"></section>
+	</article>
+</div>

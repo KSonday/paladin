@@ -1,0 +1,56 @@
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Enterprise Name' name="name"
+		ng-model="enterpriseData.name">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Enterprise Display Name' name="name"
+		ng-model="enterpriseData.displayName">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Contact Name' ng-model="enterpriseData.contactName">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Contact Email' ng-model="enterpriseData.contactEmail">
+</div>
+
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Phone Number' name="name"
+		ng-model="enterpriseData.phoneNumber">
+</div>
+
+<div class="form-group">
+	<input type="text" class="form-control text-input"
+		placeholder='Number of Lawyers' name="name"
+		ng-model="enterpriseData.numLawyers">
+</div>
+
+<div class="form-group form-element-height">
+	<select class="form-control"
+		ng-model="enterpriseData.hasProgram">
+		<option value="" selected disabled>Existing Pro-bono program?</option>
+		<option class="whitefont" value="true">Yes</option>
+		<option class="whitefont" value="false">No</option>
+	</select>
+</div>
+
+<div class="form-group"
+	ng-if="formData.organization.hasProgram == 'true'">
+	<label class="pull-left">If yes, tell us about it:</label>
+	<textarea class="form-control" rows="5"
+		ng-model="enterpriseData.programExp"></textarea>
+</div>
+
+<div class="form-submit">
+	<div id="form-submit">
+		<a ng-click="processForm()" class="button special"> Finished! </a>
+	</div>
+</div>
